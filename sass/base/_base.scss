@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0 12.8rem;
+  @include respond(phone) {
+    padding: 0 1.5rem;
+  }
+}
+main {
+  margin-bottom: 5rem;
+}

@@ -1,0 +1,51 @@
+.top {
+  &_articles {
+    margin-top: 6.4rem;
+  }
+  &_list {
+    // background-color: yellow;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3.2rem;
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      row-gap: 3rem;
+    }
+    &-item {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      .article {
+        &_img {
+          width: 100%;
+        }
+        &_img-box {
+          grid-column: 1/2;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        &_details {
+          //   background-color: red;
+          grid-column: 2/4;
+          padding-left: 2rem;
+          .heading-secondary {
+            color: $Very-dark-blue;
+            font-size: 2rem;
+            margin-bottom: 1.2rem;
+          }
+        }
+        &_index {
+          color: $Grayish-blue;
+          font-weight: 700;
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+        &_description {
+          color: $Grayish-blue;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}

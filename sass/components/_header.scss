@@ -1,0 +1,41 @@
+.header {
+  padding: 4.8rem 0 3.2rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  @include respond(phone) {
+    padding: 3rem 0;
+  }
+  .logo {
+    height: 4rem;
+    @include respond(phone) {
+      height: 3rem;
+    }
+  }
+  .menu-icon {
+    &-box {
+      display: none;
+      @include respond(phone) {
+        display: block;
+      }
+    }
+  }
+  .nav__ {
+
+    &list {
+      list-style: none;
+      margin-top: 0.4rem;
+      display: flex;
+      font-weight: 700;
+      @include respond(phone) {
+        display: none;
+      }
+      &-item {
+        color: $Dark-grayish-blue;
+        &:not(:last-child) {
+          margin-right: 4.8rem;
+        }
+      }
+    }
+  }
+}

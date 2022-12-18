@@ -1,0 +1,346 @@
+/*
+  0 - 600px:      Phone
+  600 - 900px:    Tablet portrait
+  900 - 1200px:   Tablet landscape
+  [1200 - 1800] is where our normal styles apply
+  1800px + :      Big desktop
+
+  $breakpoint arguement choices:
+  - phone
+  - tab-port
+  - tab-land
+  - big-desktop
+
+  ORDER: Base + typography > general layout + grid > page layout > components
+
+  1em = 16px
+  */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400;700;800&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  padding: 0 12.8rem;
+}
+@media only screen and (max-width: 37.5em) {
+  body {
+    padding: 0 1.5rem;
+  }
+}
+
+main {
+  margin-bottom: 5rem;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+body {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.heading-primary {
+  font-weight: 800;
+  color: hsl(240deg, 100%, 5%);
+}
+
+.u-margin-right-small {
+  margin-right: 0.6rem;
+}
+
+.u-margin-left-medium {
+  margin-left: 1rem;
+}
+
+.header {
+  padding: 4.8rem 0 3.2rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+@media only screen and (max-width: 37.5em) {
+  .header {
+    padding: 3rem 0;
+  }
+}
+.header .logo {
+  height: 4rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .header .logo {
+    height: 3rem;
+  }
+}
+.header .menu-icon-box {
+  display: none;
+}
+@media only screen and (max-width: 37.5em) {
+  .header .menu-icon-box {
+    display: block;
+  }
+}
+.header .nav__list {
+  list-style: none;
+  margin-top: 0.4rem;
+  display: flex;
+  font-weight: 700;
+}
+@media only screen and (max-width: 37.5em) {
+  .header .nav__list {
+    display: none;
+  }
+}
+.header .nav__list-item {
+  color: hsl(236deg, 13%, 42%);
+}
+.header .nav__list-item:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.main-article {
+  padding-right: 2rem;
+  grid-column: 1/3;
+}
+@media only screen and (max-width: 37.5em) {
+  .main-article {
+    grid-column: 1/-1;
+    padding-right: 0;
+  }
+}
+.main-article .hero-img-box {
+  max-width: 100%;
+  background-image: url("../assets/images/image-web-3-desktop.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 65%;
+}
+@media only screen and (max-width: 37.5em) {
+  .main-article .hero-img-box {
+    background-image: url("../../assets/images/image-web-3-mobile.jpg");
+    height: 40vh;
+  }
+}
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 3rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+}
+.main-heading {
+  grid-column: 1/2;
+  padding-right: 6.4rem;
+}
+.main-heading h1 {
+  font-size: 3.6rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .main-heading h1 {
+    font-size: 4rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .main-heading {
+    grid-column: 1/-1;
+    padding-right: 0;
+  }
+}
+.main-sub {
+  grid-column: 2/4;
+}
+@media only screen and (max-width: 37.5em) {
+  .main-sub {
+    grid-column: 1/-1;
+  }
+}
+.main-sub .description {
+  line-height: 1.6;
+  color: hsl(236deg, 13%, 42%);
+  font-size: 16px;
+}
+
+.btn__read-more {
+  background-color: hsl(5deg, 85%, 63%);
+  text-transform: uppercase;
+  color: #fffdfa;
+  margin-top: 2.4rem;
+  padding: 1rem 2rem;
+  letter-spacing: 0.3rem;
+  display: flex;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border: none;
+}
+@media only screen and (max-width: 37.5em) {
+  .btn__read-more {
+    margin-bottom: 7rem;
+    padding: 1.6rem 3rem;
+    font-size: 1.3rem;
+  }
+}
+
+.sidebar {
+  background: hsl(240deg, 100%, 5%);
+  grid-column: 3/4;
+  padding: 3.2rem 2rem 3rem 2rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .sidebar {
+    grid-column: 1/-1;
+    padding-top: 2.4rem;
+  }
+}
+.sidebar .heading-primary {
+  color: hsl(35deg, 77%, 62%);
+  margin-bottom: 3.2rem;
+  font-size: 4rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .sidebar .heading-primary {
+    font-size: 3.6rem;
+  }
+}
+.sidebar .side__list {
+  list-style: none;
+}
+.sidebar .side__list-item:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+.sidebar .side__list-item:not(:last-child)::after {
+  content: "";
+  background: hsl(236deg, 13%, 42%);
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 3.2rem;
+}
+.sidebar .side__list-item .heading-secondary {
+  color: rgba(255, 253, 250, 0.9);
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .sidebar .side__list-item .heading-secondary {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+}
+.sidebar .side__list-item .description {
+  color: #c5c6ce;
+  font-size: 1.7rem;
+  line-height: 1.6;
+}
+@media only screen and (max-width: 37.5em) {
+  .sidebar .side__list-item .description {
+    font-size: 1.5rem;
+  }
+}
+
+.top_articles {
+  margin-top: 6.4rem;
+}
+.top_list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 3.2rem;
+       column-gap: 3.2rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .top_list {
+    grid-template-columns: 1fr;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    row-gap: 3rem;
+  }
+}
+.top_list-item {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.top_list-item .article_img {
+  width: 100%;
+}
+.top_list-item .article_img-box {
+  grid-column: 1/2;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.top_list-item .article_details {
+  grid-column: 2/4;
+  padding-left: 2rem;
+}
+.top_list-item .article_details .heading-secondary {
+  color: hsl(240deg, 100%, 5%);
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+}
+.top_list-item .article_index {
+  color: #c5c6ce;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.top_list-item .article_description {
+  color: #c5c6ce;
+  line-height: 1.6;
+}
+
+.sidenav {
+  width: 0;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #fffdfa;
+  overflow-x: hidden;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 40% 0 0 7%;
+  color: hsl(240deg, 100%, 5%);
+  font-weight: 600;
+}
+.sidenav .close-icon {
+  height: 3.5rem;
+}
+.sidenav .close-icon-box {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  font-size: 36px;
+}
+
+.grid {
+  display: grid;
+}
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media only screen and (max-width: 37.5em) {
+  .grid--3-cols {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}/*# sourceMappingURL=main.css.map */
