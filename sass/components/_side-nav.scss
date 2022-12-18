@@ -15,12 +15,14 @@
   color: $Very-dark-blue;
   font-weight: 600;
   .close-icon {
-    height: 3.5rem;
-    &-box {
-      position: absolute;
-      top: 3rem;
-      right: 3rem;
-      font-size: 36px;
+    @include respond(phone) {
+      height: 3.5rem;
+      &-box {
+        position: absolute;
+        top: 3rem;
+        right: 3rem;
+        font-size: 36px;
+      }
     }
   }
 }
