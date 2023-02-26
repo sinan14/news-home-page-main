@@ -9,12 +9,12 @@
     .hero-img {
       &-box {
         max-width: 100%;
-        background-image: url("../assets/images/image-web-3-desktop.jpg");
+        background-image: url('./../assets/images/image-web-3-desktop.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         height: 65%;
         @include respond(phone) {
-          background-image: url("../../assets/images/image-web-3-mobile.jpg");
+          background-image: url('./../assets/images/image-web-3-mobile.jpg');
           height: 40vh;
         }
       }
