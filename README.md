@@ -1,6 +1,6 @@
 # Web page hosted at
 
-https://front-end-mentor-works.github.io/news-home-page-main/
+https://sinan14.github.io/news-home-page-main/
 
 # Frontend Mentor - News homepage
 
